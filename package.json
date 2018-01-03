@@ -7,7 +7,9 @@
     "start:debug": "node inspect ./bin/www",
     "db:seed": "node ./seed/seed.js",
     "db:drop": "node ./seed/drop.js",
-    "db:reset": "npm run db:drop && npm run db:seed"
+    "db:reset": "npm run db:drop && npm run db:seed",
+    "test": "mocha",
+    "infra": "node infrastructure/heroku"
   },
   "dependencies": {
     "body-parser": "~1.15.2",

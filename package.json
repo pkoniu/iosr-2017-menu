@@ -20,6 +20,7 @@
     "express": "~4.14.0",
     "heroin-js": "^1.20.1",
     "lodash": "^4.17.4",
+    "minimist": "^1.2.0",
     "mocha": "^4.1.0",
     "mongodb": "^2.2.33",
     "morgan": "~1.7.0"

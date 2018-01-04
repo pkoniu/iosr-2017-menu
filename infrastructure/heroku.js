@@ -1,7 +1,7 @@
 const heroin = require('heroin-js');
 
 const configurator = heroin(process.env.HEROKU_AUTH_TOKEN);
-const configuration = require('./configuration');
+const configuration = require('./app-configuration');
 
 configurator(configuration)
     .then(result => {

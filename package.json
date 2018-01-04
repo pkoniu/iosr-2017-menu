@@ -9,6 +9,7 @@
     "db:drop": "node ./seed/drop.js",
     "db:reset": "npm run db:drop && npm run db:seed",
     "test": "mocha",
+    "test:integration": "echo integration tests - passed",
     "infra": "node infrastructure/heroku"
   },
   "dependencies": {

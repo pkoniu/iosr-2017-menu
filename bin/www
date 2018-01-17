@@ -6,8 +6,8 @@ const {
     MONGODB_URI,
     MONGO_HOST = 'localhost',
     MONGO_PORT = '27017',
-    DB_NAME = 'iosr2017-orders',
-    PORT = '3001'
+    DB_NAME = 'iosr2017-menu',
+    PORT = '3002'
 } = process.env;
 
 let server, port;
@@ -24,7 +24,7 @@ MongoClient.connect(mongoUrl)
         const debug = require('debug')('iosr-2017:server');
         const http = require('http');
 
-        port = normalizePort(process.env.PORT || '3000');
+        port = normalizePort(PORT);
         app.set('port', port);
 
         server = http.createServer(app);

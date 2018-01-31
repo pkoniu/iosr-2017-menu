@@ -11,6 +11,7 @@ const {
     EUREKA_APP_NAME = 'menu',
     EUREKA_APP_HOST_NAME = 'localhost',
     EUREKA_APP_IP_ADDR = '127.0.0.1',
+    EUREKA_APP_VIP_ADDR = 'localhost',
     EUREKA_SERVER_URL = 'https://user:iosr2017@iosr2017eureka-develop.herokuapp.com/eureka/apps'
 } = process.env;
 
@@ -26,7 +27,7 @@ const client = new Eureka({
         hostName: EUREKA_APP_HOST_NAME,
         ipAddr: EUREKA_APP_IP_ADDR,
         port: normalizePort(PORT),
-        vipAddress: EUREKA_APP_NAME,
+        vipAddress: EUREKA_APP_VIP_ADDR,
         dataCenterInfo: {
           name: 'MyOwn'
         },
@@ -94,10 +95,12 @@ function onError(error) {
     switch (error.code) {
         case 'EACCES':
             console.error(bind + ' requires elevated privileges');
+            client.stop();
             process.exit(1);
             break;
         case 'EADDRINUSE':
             console.error(bind + ' is already in use');
+            client.stop();
             process.exit(1);
             break;
         default:
